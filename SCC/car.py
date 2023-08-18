@@ -148,7 +148,7 @@ class SUVCar(Car):
             + "\t" +self.engine.getName() +"\n"
             + "\t" +self.tire.getName() +"\n"
             + "\t" +self.chesis.getName() +"\n"
-            + "External Components: \n"
+            + "external components: \n"
             + "\t" +self.ac.getName() +"\n"
             + "\t" +self.seat.getName() +"\n"
             
