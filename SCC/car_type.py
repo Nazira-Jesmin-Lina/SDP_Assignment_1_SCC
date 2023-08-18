@@ -3,7 +3,7 @@ from car import *
 from car_factory import *
 from ai_sytem import *
 from car_parts import *
-from Enum import *
+from define_enum import *
 
 # Abstract Factory Pattern
 

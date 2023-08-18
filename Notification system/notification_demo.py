@@ -13,11 +13,10 @@ def main():
     subscriber3.request_for_subscription()
 
     notification_system.price_change()
-   
+
     subscriber2.request_for_subscription_removal()
-   
+
     notification_system.basic_features_change()
-   
 
 
 if __name__ == "__main__":

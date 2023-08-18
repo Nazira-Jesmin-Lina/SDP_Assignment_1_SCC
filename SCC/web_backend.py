@@ -1,5 +1,6 @@
 from car_service import *
-
+from define_enum import *
+from car import *
 
 class WebBackend():
     def request_service(self, service_type, car):
@@ -13,3 +14,6 @@ class WebBackend():
     def request_delivery(self, car):
         delivery_service = OnlineDeliveryService()
         delivery_service.deliver_car(car)
+
+
+    

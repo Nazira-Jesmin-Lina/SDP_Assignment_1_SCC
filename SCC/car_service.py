@@ -1,5 +1,6 @@
 from abc import ABC,abstractmethod
 
+from car import *
 
 
 class CarService(ABC):
@@ -9,6 +10,7 @@ class CarService(ABC):
     def execute(self):
         pass
 
+        
 
 class CarWashingService(CarService):
     def execute(self):
@@ -40,4 +42,5 @@ class CarServicingService(CarService):
 
 class OnlineDeliveryService:
     def deliver_car(self, car):
-        print(f"Delivering {car.body_design} car to the client.")
+        
+        print(f"Delivering {car.body_design} car to the client.\n details:\n {car.getDescription}")

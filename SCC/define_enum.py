@@ -18,3 +18,8 @@ class CarColor(Enum):
     GRAY = 2
     BLACK = 3
     WHITE = 4
+
+class ServiceType(Enum):
+    WASH="Wash"
+    SERVICE="Service"
+    ONLINE_DELIVERY="Delivery"

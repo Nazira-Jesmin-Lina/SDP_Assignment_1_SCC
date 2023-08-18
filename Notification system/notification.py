@@ -1,32 +1,14 @@
-from abc import ABC, abstractmethod
-# Observer Pattern 
-class NotificationSubject(ABC):
-    @abstractmethod
-    def register_subscriber(self, subscriber):
-        pass
+class NotificationSystem:
+    _unique_instance = None
 
-    @abstractmethod
-    def remove_subscriber(self, subscriber):
-        pass
-
-    @abstractmethod
-    def notify_subscribers_for_price_change(self):
-        pass
-
-    @abstractmethod
-    def notify_subscriber_for_car_feature_change(self):
-        pass
-
-class NotificationSystem(NotificationSubject):
     def __init__(self):
         self.subscriber_set = set()
-        self.unique_instance = None
 
-    @staticmethod
-    def get_instance():
-        if NotificationSystem.unique_instance is None:
-            NotificationSystem.unique_instance = NotificationSystem()
-        return NotificationSystem.unique_instance
+    @classmethod
+    def get_instance(cls):
+        if cls._unique_instance is None:
+            cls._unique_instance = cls()
+        return cls._unique_instance
 
     def register_subscriber(self, subscriber):
         self.subscriber_set.add(subscriber)
@@ -36,18 +18,14 @@ class NotificationSystem(NotificationSubject):
 
     def notify_subscribers_for_price_change(self):
         for subscriber in self.subscriber_set:
-            subscriber.update("Some cars price has been changed. Please visit our website to see the changes...")
+            subscriber.update("Some cars price has been changed. Please visit our website to see the updates...\n\n")
 
     def notify_subscriber_for_car_feature_change(self):
         for subscriber in self.subscriber_set:
-            subscriber.update("Some cars basic features has been changed. Please visit our website to see the changes...")
+            subscriber.update("Some cars basic features have been changed. Please visit our website to see the updates...\n\n")
 
     def price_change(self):
         self.notify_subscribers_for_price_change()
 
     def basic_features_change(self):
         self.notify_subscriber_for_car_feature_change()
-
-class Subscriber:
-    def update(self, message):
-        print("Received update:", message)

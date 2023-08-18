@@ -1,7 +1,4 @@
 from notification import *
-
-# observer pattern
-
 class Subscriber:
     def update(self, message):
         pass
@@ -11,6 +8,7 @@ class Subscriber:
 
     def request_for_subscription_removal(self):
         pass
+
 
 class SubscriberClient(Subscriber):
     def __init__(self, name):
