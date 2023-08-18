@@ -11,12 +11,17 @@ class SCC(ABC):
         car.prepareCar(carColor)
         return car
     
-    def serviceCar(self, carType , serviceType):
+    def serviceCar(self,name,serviceType, carType , budgetType, carColor):
         web=WebBackend()
-        web.request_service(carType,serviceType)
+        car=SCC.orderCar(self, carType, budgetType, carColor)
+        web.request_service(name,serviceType,carType,car)
 
-    def onlineOrder(self, carType, budgetType, carColor):
+    def onlineOrder(self, name,carType, budgetType, carColor):
         car= SCC.orderCar(self, carType, budgetType, carColor)
+        web=WebBackend()
+        web.request_delivery(name,car)
+
+        
         
 
     @abstractmethod
