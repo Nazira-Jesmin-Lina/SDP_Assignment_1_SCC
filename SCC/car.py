@@ -7,7 +7,7 @@ class Car(ABC):   #abstract method
         self.engine = None
         self.tire = None
         self.ac = None
-        self.chesis = None
+        self.chassis = None
         self.carColor = None
         self.seat = None
         self.bodyDesign = None

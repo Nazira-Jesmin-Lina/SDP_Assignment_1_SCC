@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from Enum import *
 from car_parts import *
 
+
 class SCC(ABC):
     def orderCar(self, carType, budgetType, carColor):
         carPartsFactory = self.assembleCarParts(budgetType)
@@ -24,5 +25,3 @@ class SCC(ABC):
             return HighBudgetCarPartsFactory()
         else:
             return None
-
-
