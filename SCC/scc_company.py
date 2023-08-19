@@ -16,6 +16,7 @@ class SCC(ABC):
         car=SCC.orderCar(self, carType, budgetType, carColor)
         web.request_service(name,serviceType,carType,car)
 
+
     def onlineOrder(self, name,carType, budgetType, carColor):
         car= SCC.orderCar(self, carType, budgetType, carColor)
         web=WebBackend()

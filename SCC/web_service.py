@@ -23,6 +23,8 @@ class CarWashingService(CarService):
         elif  cartype == CarType.SUV:
             payment= 15
         print(f"Washing done for {name}'s {car.getDescription()} \nTotal Payment for washing: {payment}")
+        print("_____________________________________________________________________________________")
+
 
 
 class CarServicingService(CarService):
@@ -37,11 +39,13 @@ class CarServicingService(CarService):
         elif  cartype == CarType.SUV:
             payment= 15
         print(f"Servicing done for {name}'s {car.getDescription()} \nTotal Payment for washing: {payment}")
+        print("_____________________________________________________________________________________")
+
 
 
 class OnlineDeliveryService:
     def deliver_car(self,name ,car):
-        print("_____________________________________________________________________________________")
+       
 
         print(f"Delivering {name}'s car.\nCar Description:\n {car.getDescription()} Total cost of the car is:{ car.cost()}")
         print("_____________________________________________________________________________________")
